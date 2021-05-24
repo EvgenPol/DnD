@@ -9,16 +9,13 @@ import Foundation
 
 class ClassBasis {
     var level = 1
-    
+    var expirience:UInt = 0
     var hitDie:Dices!
-    
+    var ability = Ability()
     var tools:Tools!
     var skills:[Skills]!
-    var features:
     var savingThrowProficiencies:[String]!
     var primalAbilites:[String]!
-    var advantage:[String] = []
-    var resistance:[String] = []
     var armorProficiencies:[Any]!
     var weaponProficiencies:[Any]!
     var startEquipment:StartEquipment!
@@ -38,5 +35,4 @@ class ClassBasis {
         }
     }
 
-    func useFeatures(features:Features){}
 }
