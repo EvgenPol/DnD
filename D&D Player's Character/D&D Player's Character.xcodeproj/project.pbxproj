@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CBECFD8265BD10D0089E20B /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD5265BD10D0089E20B /* Equipment.swift */; };
+		6CBECFD9265BD10D0089E20B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD6265BD10D0089E20B /* Item.swift */; };
+		6CBECFDA265BD10D0089E20B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD7265BD10D0089E20B /* Tools.swift */; };
 		6CCB96902651590000CC4F93 /* Traits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB968F2651590000CC4F93 /* Traits.swift */; };
 		6CCB9693265160A300CC4F93 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB9692265160A300CC4F93 /* Languages.swift */; };
-		6CCB9696265164E400CC4F93 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB9695265164E400CC4F93 /* Tools.swift */; };
 		6CCB969926516A7300CC4F93 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB969826516A7300CC4F93 /* Size.swift */; };
 		6CCB969C26516BFE00CC4F93 /* Subraces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB969B26516BFE00CC4F93 /* Subraces.swift */; };
 		6CCB96A0265179AC00CC4F93 /* ClassBasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB969F265179AC00CC4F93 /* ClassBasis.swift */; };
@@ -18,7 +20,6 @@
 		6CCB96AE2651834F00CC4F93 /* Dices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96AD2651834F00CC4F93 /* Dices.swift */; };
 		6CCB96B32651847400CC4F93 /* AbilityAndSkills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96B22651847400CC4F93 /* AbilityAndSkills.swift */; };
 		6CCB96BA26518B4500CC4F93 /* BarbarianClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96B926518B4500CC4F93 /* BarbarianClass.swift */; };
-		6CCB96BE26518D9800CC4F93 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96BD26518D9800CC4F93 /* Equipment.swift */; };
 		6CF3E94C263EB33200910CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94B263EB33200910CE5 /* AppDelegate.swift */; };
 		6CF3E94E263EB33200910CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94D263EB33200910CE5 /* SceneDelegate.swift */; };
 		6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94F263EB33200910CE5 /* ViewController.swift */; };
@@ -33,9 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6CBECFD5265BD10D0089E20B /* Equipment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		6CBECFD6265BD10D0089E20B /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6CBECFD7265BD10D0089E20B /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6CCB968F2651590000CC4F93 /* Traits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traits.swift; sourceTree = "<group>"; };
 		6CCB9692265160A300CC4F93 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
-		6CCB9695265164E400CC4F93 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6CCB969826516A7300CC4F93 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
 		6CCB969B26516BFE00CC4F93 /* Subraces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subraces.swift; sourceTree = "<group>"; };
 		6CCB969F265179AC00CC4F93 /* ClassBasis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBasis.swift; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		6CCB96AD2651834F00CC4F93 /* Dices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dices.swift; sourceTree = "<group>"; };
 		6CCB96B22651847400CC4F93 /* AbilityAndSkills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityAndSkills.swift; sourceTree = "<group>"; };
 		6CCB96B926518B4500CC4F93 /* BarbarianClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbarianClass.swift; sourceTree = "<group>"; };
-		6CCB96BD26518D9800CC4F93 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		6CF3E948263EB33200910CE5 /* D&D Player's Character.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D Player's Character.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF3E94B263EB33200910CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CF3E94D263EB33200910CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CBECFD4265BD10D0089E20B /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				6CBECFD5265BD10D0089E20B /* Equipment.swift */,
+				6CBECFD6265BD10D0089E20B /* Item.swift */,
+				6CBECFD7265BD10D0089E20B /* Tools.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		6CCB969E2651799500CC4F93 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,9 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				6CCB96AD2651834F00CC4F93 /* Dices.swift */,
-				6CCB96BD26518D9800CC4F93 /* Equipment.swift */,
 				6CF3E977263EC42B00910CE5 /* Alignment.swift */,
-				6CCB9695265164E400CC4F93 /* Tools.swift */,
 				6CCB96B22651847400CC4F93 /* AbilityAndSkills.swift */,
 			);
 			path = OtherStuff;
@@ -172,6 +182,7 @@
 		6CF3E967263EB3A800910CE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6CBECFD4265BD10D0089E20B /* Item */,
 				6CCB96AC2651833800CC4F93 /* OtherStuff */,
 				6CF3E96B263EB71F00910CE5 /* Race */,
 				6CCB969E2651799500CC4F93 /* Class */,
@@ -260,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CBECFD9265BD10D0089E20B /* Item.swift in Sources */,
 				6CCB969C26516BFE00CC4F93 /* Subraces.swift in Sources */,
 				6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */,
 				6CF3E978263EC42B00910CE5 /* Alignment.swift in Sources */,
@@ -273,11 +285,11 @@
 				6CCB96B32651847400CC4F93 /* AbilityAndSkills.swift in Sources */,
 				6CF3E94C263EB33200910CE5 /* AppDelegate.swift in Sources */,
 				6CF3E94E263EB33200910CE5 /* SceneDelegate.swift in Sources */,
-				6CCB9696265164E400CC4F93 /* Tools.swift in Sources */,
-				6CCB96BE26518D9800CC4F93 /* Equipment.swift in Sources */,
+				6CBECFD8265BD10D0089E20B /* Equipment.swift in Sources */,
 				6CCB96AE2651834F00CC4F93 /* Dices.swift in Sources */,
 				6CF3E969263EB40F00910CE5 /* Character.swift in Sources */,
 				6CF3E96D263EB86000910CE5 /* RaceBasis.swift in Sources */,
+				6CBECFDA265BD10D0089E20B /* Tools.swift in Sources */,
 				6CCB96BA26518B4500CC4F93 /* BarbarianClass.swift in Sources */,
 				6CCB9693265160A300CC4F93 /* Languages.swift in Sources */,
 			);
