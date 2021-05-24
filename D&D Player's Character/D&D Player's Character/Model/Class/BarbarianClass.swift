@@ -37,9 +37,12 @@ class BarbarianClass: ClassBasis {
     }
     
     //Доделать
-    func useFeatures(features:Features) {
+    override func useFeatures(features:Features) {
         switch features {
-        case .rage: rageON = true; countRage-=1
+        case .rage:
+            rageON = true; countRage-=1; advantage += ["strenght"]
+            
+        
         default: break
         }
     }
