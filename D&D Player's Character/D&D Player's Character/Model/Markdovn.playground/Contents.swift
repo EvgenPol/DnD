@@ -22,5 +22,7 @@ func calculateArea (sizeN1:Int, N2:Int) -> Int {
 }
 print(calculateArea(sizeN1: a, N2: b))
 
-
-
+for _ in 1...30 {
+    print(arc4random_uniform(4) + UInt32(1))
+}
+var aqweqwe = (24 - 15) + (4) + (50 - 33) + (5)

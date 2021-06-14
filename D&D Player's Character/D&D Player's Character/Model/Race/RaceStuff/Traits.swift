@@ -13,17 +13,4 @@ enum Traits {
     case dwarvenResilience
     case dwarvenCombatTraining
     case stoneCunning
-    
-    func useTrait() {
-        switch self {
-        case .darkvision:
-            _ = 0
-        case .dwarvenResilience:
-            _ = 0
-        case .dwarvenCombatTraining:
-            _ = 0
-        case .stoneCunning:
-            _ = 0
-        }
-    }
 }

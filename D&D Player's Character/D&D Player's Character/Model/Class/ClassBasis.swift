@@ -14,7 +14,7 @@ class ClassBasis {
     
     var tools:Tools!
     var skills:[Skills]!
-    var features:
+    var features:Features!
     var savingThrowProficiencies:[String]!
     var primalAbilites:[String]!
     var advantage:[String] = []
@@ -37,6 +37,7 @@ class ClassBasis {
             return 6
         }
     }
-
-    func useFeatures(features:Features){}
+    
+    func useFeatures(features:Features){ }
+    
 }

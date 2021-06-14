@@ -7,25 +7,28 @@
 
 import Foundation
 
+//Безоружная атака это simple melee
 class Character {
     var race:RaceBasis!
     var classOfChar:ClassBasis!
     var expirience:UInt = 0
-    var hitPoints:Int!
-    var maxHP:Int!
+    var hitPoints = 0
+    var maxHP = 0
     var advantage:[String] = []
     var resistance:[String] = []
     var ability = Ability()
-    var alignment:Alignment!
+    var alignment:Alignment
     var additionHP = 0
-    var money = 0.0
     var damage = 0
     var armorClass = 10
     var personality:Personality!
     var background:Background!
     
-    func useFeatures(features:Features) {
+    func useFeaturesOfClass(features:Features) {
         classOfChar.useFeatures(features:features)
+    }
+    
+    func useTraitOfRace() {
     }
     
     func updateStatsCharacter() {

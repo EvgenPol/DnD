@@ -25,6 +25,9 @@ class RaceDwarf:RaceBasis {
                            .mason,
                            .smith
         ]
+      
+        
+        
         self.traits = [.darkvision,
                        .dwarvenResilience,
                        .dwarvenCombatTraining,

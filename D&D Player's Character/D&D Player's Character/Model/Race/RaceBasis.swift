@@ -25,6 +25,8 @@ class RaceBasis  {
         var weight:UInt!
     }
     
+  
+    
     
     init() {
         
