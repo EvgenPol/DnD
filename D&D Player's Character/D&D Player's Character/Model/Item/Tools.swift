@@ -6,52 +6,15 @@
 //
 
 import Foundation
-
-enum Tools {
-    
-    //Artisan's
-    case alchemist
-    case brewer
-    case calligrapher
-    case carpenter
-    case cartographer
-    case cobbler
-    case cook
-    case glassblower
-    case jeweler
-    case leatherworker
-    case mason
-    case painter
-    case potter
-    case smith
-    case tinker
-    case weaver
-    case woodcarver
-    
-    //Gameing set
-    case dice
-    case dragonchess
-    case playingCard
-    case threeDragonAnte
-    
-    //Musical instrument
-    case bagpipes
-    case drum
-    case dulcimer
-    case flute
-    case lute
-    case lyre
-    case horn
-    case panFlute
-    case shawm
-    case viol
-    
-    //Other
-    case DisguiseKit
-    case ForgeryKit
-    case herbalismKit
-    case navigatorTools
-    case poisonerKit
-    case thievesTools
-    
-}
+//        1) Создать класс Tools для этой ветки с суперклассом Item.
+//        2) Создать классы ArtisanTools,
+//                          DisguiseKit,
+//                            ForgeryKit,
+//                            CorningSet,
+//                            HerbalismKit,
+//                            MusicalInstrument,
+//                            NavigatorTools,
+//                            PoisonerKit,
+//                            ThieveTools
+//             На стр 154 в англ книге. При необходимости добавить перечисления. Vehicles - будет реализован в другом файле.
+//

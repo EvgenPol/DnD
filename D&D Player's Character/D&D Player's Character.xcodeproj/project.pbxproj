@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		6C185C522677A643001067A3 /* TypeOfDamage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C185C512677A643001067A3 /* TypeOfDamage.swift */; };
 		6C185C542677CD1D001067A3 /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C185C532677CD1D001067A3 /* Items.swift */; };
+		6C185C582679330C001067A3 /* VehicleAndMount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C185C572679330C001067A3 /* VehicleAndMount.swift */; };
 		6C9E597426779BE300060D61 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E597326779BE300060D61 /* Weapon.swift */; };
-		6CBECFD8265BD10D0089E20B /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD5265BD10D0089E20B /* Equipment.swift */; };
 		6CBECFD9265BD10D0089E20B /* ItemRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD6265BD10D0089E20B /* ItemRootClass.swift */; };
 		6CBECFDA265BD10D0089E20B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD7265BD10D0089E20B /* Tools.swift */; };
 		6CBECFE0265D56780089E20B /* Inventary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFDF265D56780089E20B /* Inventary.swift */; };
@@ -42,8 +42,8 @@
 /* Begin PBXFileReference section */
 		6C185C512677A643001067A3 /* TypeOfDamage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeOfDamage.swift; sourceTree = "<group>"; };
 		6C185C532677CD1D001067A3 /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		6C185C572679330C001067A3 /* VehicleAndMount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAndMount.swift; sourceTree = "<group>"; };
 		6C9E597326779BE300060D61 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
-		6CBECFD5265BD10D0089E20B /* Equipment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 		6CBECFD6265BD10D0089E20B /* ItemRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRootClass.swift; sourceTree = "<group>"; };
 		6CBECFD7265BD10D0089E20B /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		6CBECFDF265D56780089E20B /* Inventary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventary.swift; sourceTree = "<group>"; };
@@ -90,9 +90,9 @@
 			children = (
 				6CBECFD6265BD10D0089E20B /* ItemRootClass.swift */,
 				6C185C532677CD1D001067A3 /* Items.swift */,
-				6CBECFD5265BD10D0089E20B /* Equipment.swift */,
 				6CBECFE4266238090089E20B /* Armor.swift */,
 				6C9E597326779BE300060D61 /* Weapon.swift */,
+				6C185C572679330C001067A3 /* VehicleAndMount.swift */,
 				6CBECFD7265BD10D0089E20B /* Tools.swift */,
 			);
 			path = Item;
@@ -302,6 +302,7 @@
 				6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */,
 				6CF3E978263EC42B00910CE5 /* Alignment.swift in Sources */,
 				6C185C542677CD1D001067A3 /* Items.swift in Sources */,
+				6C185C582679330C001067A3 /* VehicleAndMount.swift in Sources */,
 				6CF3E971263EBACA00910CE5 /* RaceDwarf.swift in Sources */,
 				6CF3E975263EC0B500910CE5 /* Names.swift in Sources */,
 				6CCB96A626517C8E00CC4F93 /* StartEquipment.swift in Sources */,
@@ -314,7 +315,6 @@
 				6CBECFE0265D56780089E20B /* Inventary.swift in Sources */,
 				6CF3E94C263EB33200910CE5 /* AppDelegate.swift in Sources */,
 				6CF3E94E263EB33200910CE5 /* SceneDelegate.swift in Sources */,
-				6CBECFD8265BD10D0089E20B /* Equipment.swift in Sources */,
 				6CCB96AE2651834F00CC4F93 /* Dices&Money.swift in Sources */,
 				6CF3E969263EB40F00910CE5 /* Character.swift in Sources */,
 				6C185C522677A643001067A3 /* TypeOfDamage.swift in Sources */,
