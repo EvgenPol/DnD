@@ -9,14 +9,12 @@ import Foundation
 
 struct Ability {
     
-    
-    var strenght:UInt = 0
-    var dexterity:UInt = 0
-    var constitution:UInt = 0
-    var intelligence:UInt = 0
-    var wisdom:UInt = 0
-    var charisma:UInt = 0
-    
+    var strenght:UInt8 = 0
+    var dexterity:UInt8 = 0
+    var constitution:UInt8 = 0
+    var intelligence:UInt8 = 0
+    var wisdom:UInt8 = 0
+    var charisma:UInt8 = 0
     
 }
 

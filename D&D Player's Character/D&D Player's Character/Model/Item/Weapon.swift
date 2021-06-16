@@ -65,7 +65,7 @@ class Dagger: Weapon, Finesse, Light, Thrown, Range {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .piercing) }
     init() {
-        super.init(name:"Кинжал", cost:2_00, weight:1, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.finesse,.light,.thrown,.range])
+        super.init(name:"Кинжал", cost:2_000, weight:1, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.finesse,.light,.thrown,.range])
     }
 }
 
@@ -81,7 +81,7 @@ class HandAxe: Weapon, Light, Thrown, Range {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .slashing) }
     init() {
-        super.init(name:"Топорик", cost:5_00, weight:1, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light,.thrown,.range])
+        super.init(name:"Топорик", cost:5_000, weight:1, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light,.thrown,.range])
     }
 }
 
@@ -97,14 +97,14 @@ class LightHammer: Weapon, Light, Thrown, Range {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .bludgeoning) }
     init() {
-        super.init(name:"Лёгкий молот", cost:2_00, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light,.thrown,.range])
+        super.init(name:"Лёгкий молот", cost:2_000, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light,.thrown,.range])
     }
 }
 //
 class Mace: Weapon {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .bludgeoning) }
     init() {
-        super.init(name:"Булава", cost:5_00, weight:4, description:"", distance:.melee, typeOfWeapon:.simple, properties:[])
+        super.init(name:"Булава", cost:5_000, weight:4, description:"", distance:.melee, typeOfWeapon:.simple, properties:[])
     }
 }
 //
@@ -119,7 +119,7 @@ class QuarterStaff: Weapon, Versatile {
 class Sickle: Weapon, Light {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .slashing) }
     init() {
-        super.init(name:"Серп", cost:1_00, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light])
+        super.init(name:"Серп", cost:1_000, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light])
     }
 }
 //
@@ -128,7 +128,7 @@ class Spear: Weapon, Thrown, Versatile, Range {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     var damageForTwoHand: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Копье", cost:1_00, weight:3, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.thrown,.versatile,.range])
+        super.init(name:"Копье", cost:1_000, weight:3, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.thrown,.versatile,.range])
     }
 }
 
@@ -141,7 +141,7 @@ class CrossbowLight: Weapon, AmmunitionPr, Loading, TwoHanded, Range {
     var chargedInThisRound = false
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Лёгкий арбалет", cost:25_00, weight:5, description:"", distance:.ranged, typeOfWeapon:.simple, properties:[.ammunition, .loading, .twoHanded,.range])
+        super.init(name:"Лёгкий арбалет", cost:25_000, weight:5, description:"", distance:.ranged, typeOfWeapon:.simple, properties:[.ammunition, .loading, .twoHanded,.range])
     }
 }
 //
@@ -159,7 +159,7 @@ class ShortBow: Weapon, AmmunitionPr, TwoHanded, Range {
     var charged = false
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     init() {
-        super.init(name:"Короткий лук", cost:25_00, weight: 2, description: "", distance:.ranged, typeOfWeapon:.simple, properties:[.ammunition,.twoHanded,.range])
+        super.init(name:"Короткий лук", cost:25_000, weight: 2, description: "", distance:.ranged, typeOfWeapon:.simple, properties:[.ammunition,.twoHanded,.range])
     }
 }
 //
@@ -179,49 +179,49 @@ class BattleAxe: Weapon, Versatile {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .slashing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
-        super.init(name:"Боевой топор", cost:10_00, weight:4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
+        super.init(name:"Боевой топор", cost:10_000, weight:4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
     }
 }
 //
 class Flail: Weapon {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .bludgeoning) }
     init() {
-        super.init(name:"Цеп", cost:10_00, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
+        super.init(name:"Цеп", cost:10_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
     }
 }
 //
 class Glaive: Weapon, Heavy, Reach, TwoHanded{
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
-        super.init(name:"Глефа", cost:20_00, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
+        super.init(name:"Глефа", cost:20_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
 class GreatAxe: Weapon, Heavy, TwoHanded {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d12), .slashing) }
     init() {
-        super.init(name:"Двуручный топор", cost:30_00, weight:7, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
+        super.init(name:"Двуручный топор", cost:30_000, weight:7, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
     }
 }
 //
 class GreatSword: Weapon, Heavy, TwoHanded {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 2, dice: .d6), .slashing) }
     init() {
-        super.init(name:"Двуручный меч", cost:50_00, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
+        super.init(name:"Двуручный меч", cost:50_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
     }
 }
 //
 class Halberd: Weapon, Heavy, Reach, TwoHanded {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
-        super.init(name:"Алебарда", cost:20_00, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
+        super.init(name:"Алебарда", cost:20_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
 class Lance: Weapon, Reach, Special {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d12), .piercing) }
     init() {
-        super.init(name: "Рыцарское копье", cost:10_00, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.reach,.special])
+        super.init(name: "Рыцарское копье", cost:10_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.reach,.special])
     }
 }
 //
@@ -229,49 +229,49 @@ class LongSword: Weapon, Versatile {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .slashing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
-        super.init(name:"Длинный меч", cost:15_00, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
+        super.init(name:"Длинный меч", cost:15_000, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
     }
 }
 //
 class Maul: Weapon, Heavy, TwoHanded {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 2, dice: .d6), .bludgeoning) }
     init() {
-        super.init(name:"Молот", cost:10_00, weight:10, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
+        super.init(name:"Молот", cost:10_000, weight:10, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
     }
 }
 //
 class MorningStar: Weapon {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Моргенштерн", cost:15_00, weight: 4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
+        super.init(name:"Моргенштерн", cost:15_000, weight: 4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
     }
 }
 //
 class Pike: Weapon, Heavy, Reach,TwoHanded {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .piercing) }
     init() {
-        super.init(name:"Пика", cost:5_00, weight:18, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
+        super.init(name:"Пика", cost:5_000, weight:18, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
 class Rapier: Weapon, Finesse {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Рапира", cost:25_00, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse])
+        super.init(name:"Рапира", cost:25_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse])
     }
 }
 //
 class Scimitar: Weapon, Finesse, Light {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .slashing) }
     init() {
-        super.init(name:"Скимитар", cost:25_00, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
+        super.init(name:"Скимитар", cost:25_000, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
     }
 }
 //
 class ShortSword: Weapon, Finesse, Light {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     init() {
-        super.init(name:"Короткий меч", cost:10_00, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
+        super.init(name:"Короткий меч", cost:10_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
     }
 }
 //
@@ -280,14 +280,14 @@ class Trident: Weapon, Thrown, Versatile, Range {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Тризубец", cost:5_00, weight:4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.thrown,.versatile,.range])
+        super.init(name:"Тризубец", cost:5_000, weight:4, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.thrown,.versatile,.range])
     }
 }
 //
 class WarPick: Weapon {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Клевец", cost:5_00, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
+        super.init(name:"Клевец", cost:5_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[])
     }
 }
 //
@@ -295,14 +295,14 @@ class Warhammer: Weapon, Versatile {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .bludgeoning) }
     var damageForTwoHand: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .bludgeoning) }
     init() {
-        super.init(name:"Боевой молот", cost:15_00, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
+        super.init(name:"Боевой молот", cost:15_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.versatile])
     }
 }
 //
 class Whip: Weapon, Finesse, Reach {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .slashing) }
     init() {
-        super.init(name:"Кнут", cost:2_00, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.reach])
+        super.init(name:"Кнут", cost:2_000, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.reach])
     }
 }
 //MARK: Боевое Дальнеe
@@ -314,7 +314,7 @@ class Blowgun: Weapon, AmmunitionPr, Loading, Range {
     var chargedInThisRound = false
     override var damage: (Int, TypeOfDamage?) { (1, .piercing) }
     init() {
-        super.init(name:"Духовое ружье", cost:10_00, weight:1, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.loading,.range])
+        super.init(name:"Духовое ружье", cost:10_000, weight:1, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.loading,.range])
     }
 }
 //
@@ -325,7 +325,7 @@ class CrossbowHand: Weapon, AmmunitionPr, Light, Loading, Range {
     var chargedInThisRound = false
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     init() {
-        super.init(name:"Ручной арбалет", cost:75_00, weight:3, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.light,.loading,.range])
+        super.init(name:"Ручной арбалет", cost:75_000, weight:3, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.light,.loading,.range])
     }
 }
 //
@@ -336,7 +336,7 @@ class CrossbowHeavy: Weapon, AmmunitionPr, Heavy, Loading,TwoHanded, Range {
     var chargedInThisRound = false
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .piercing) }
     init() {
-        super.init(name:"Тяжелый арбалет", cost:50_00, weight:18, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.heavy,.loading, .twoHanded,.range])
+        super.init(name:"Тяжелый арбалет", cost:50_000, weight:18, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.heavy,.loading, .twoHanded,.range])
     }
 }
 //
@@ -346,7 +346,7 @@ class Longbow: Weapon, AmmunitionPr, Heavy, TwoHanded,Range {
     var charged = false
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
-        super.init(name:"Длинный лук", cost:50_00, weight:2, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.heavy,.twoHanded,.range])
+        super.init(name:"Длинный лук", cost:50_000, weight:2, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.ammunition,.heavy,.twoHanded,.range])
     }
 }
 //
@@ -354,6 +354,6 @@ class Net: Weapon, Special, Thrown, Range {
     let range: (normal: Int, max: Int) = (5,15)
     override var damage: (Int, TypeOfDamage?) { (0, nil) }
     init() {
-        super.init(name:"Cеть", cost:1_00, weight:3, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.special,.thrown,.range])
+        super.init(name:"Cеть", cost:1_000, weight:3, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.special,.thrown,.range])
     }
 }

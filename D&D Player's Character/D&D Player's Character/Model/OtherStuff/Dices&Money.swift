@@ -25,7 +25,6 @@ enum Dices: Int {
     }
 }
 
-
 enum Money {
     case copper
     case silver

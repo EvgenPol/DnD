@@ -56,82 +56,82 @@ class Shield: Armor {
 class Padded: LightArmor {
     init() {
         let description = DescriptionArmor.padded.description()
-        super.init(name: "Стеганные доспехи", cost: 5_00, weight: 8, description:description, armorClass: 11, stealthDisadvantage: true)
+        super.init(name: "Стеганные доспехи", cost: 5_000, weight: 8, description:description, armorClass: 11, stealthDisadvantage: true)
     }
 }
 class Leather: LightArmor {
     init() {
         let description = DescriptionArmor.leather.description()
-        super.init(name: "Кожанные доспехи", cost: 10_00, weight: 10, description: description, armorClass: 11, stealthDisadvantage: false)
+        super.init(name: "Кожанные доспехи", cost: 10_000, weight: 10, description: description, armorClass: 11, stealthDisadvantage: false)
     }
 }
 class StuddedLeather: LightArmor {
     init() {
         let description = DescriptionArmor.studdedLeather.description()
-        super .init(name: "Клепанные доспехи", cost: 45_00, weight: 13, description: description, armorClass: 12, stealthDisadvantage: false)
+        super .init(name: "Клепанные доспехи", cost: 45_000, weight: 13, description: description, armorClass: 12, stealthDisadvantage: false)
     }
 }
 //MARK: Виды средней броны
 class Hide: MediumArmor {
     init() {
         let description = DescriptionArmor.hide.description()
-        super.init(name: "Сыромятные доспехи", cost: 10_00, weight: 12, description: description, armorClass: 12, stealthDisadvantage: false)
+        super.init(name: "Сыромятные доспехи", cost: 10_000, weight: 12, description: description, armorClass: 12, stealthDisadvantage: false)
     }
 }
 class ChainShirt: MediumArmor {
     init() {
         let description = DescriptionArmor.chainShirt.description()
-        super.init(name: "Кольчужная рубаха", cost: 50_00, weight: 20, description: description, armorClass: 13, stealthDisadvantage: false)
+        super.init(name: "Кольчужная рубаха", cost: 50_000, weight: 20, description: description, armorClass: 13, stealthDisadvantage: false)
     }
 }
 class ScaleMail: MediumArmor {
     init() {
         let description = DescriptionArmor.scaleMail.description()
-        super.init(name: "Чешуйчатые доспехи", cost: 50_00, weight: 45, description: description, armorClass: 14, stealthDisadvantage: true)
+        super.init(name: "Чешуйчатые доспехи", cost: 50_000, weight: 45, description: description, armorClass: 14, stealthDisadvantage: true)
     }
 }
 class Breastplate: MediumArmor {
     init() {
         let description = DescriptionArmor.breastplate.description()
-        super.init(name: "Нагрудник", cost: 400_00, weight: 20, description: description, armorClass: 14, stealthDisadvantage: false)
+        super.init(name: "Нагрудник", cost: 400_000, weight: 20, description: description, armorClass: 14, stealthDisadvantage: false)
     }
 }
 class HalfPlate: MediumArmor {
     init() {
         let description = DescriptionArmor.halfPlate.description()
-        super.init(name: "Полулаты", cost: 750_00, weight: 40, description: description, armorClass: 15, stealthDisadvantage: true)
+        super.init(name: "Полулаты", cost: 750_000, weight: 40, description: description, armorClass: 15, stealthDisadvantage: true)
     }
 }
 //MARK: Виды тяжелой брони
 class RingMail: HeavyArmor {
     init() {
         let description = DescriptionArmor.ringMail.description()
-        super.init(name: "Кольчатые доспехи", cost: 30_00, weight: 40, description: description, armorClass: 14, strength: nil)
+        super.init(name: "Кольчатые доспехи", cost: 30_000, weight: 40, description: description, armorClass: 14, strength: nil)
     }
 }
 class ChainMail: HeavyArmor {
     init() {
         let description = DescriptionArmor.chainMail.description()
-        super.init(name: "Кольчуга", cost: 75_00, weight: 55, description: description, armorClass: 16, strength: 13)
+        super.init(name: "Кольчуга", cost: 75_000, weight: 55, description: description, armorClass: 16, strength: 13)
     }
 }
 class Splint: HeavyArmor {
     init() {
         let description = DescriptionArmor.splint.description()
-        super.init(name: "Пластинчатые доспехи", cost: 200_00, weight: 60, description: description, armorClass: 17, strength: 15)
+        super.init(name: "Пластинчатые доспехи", cost: 200_000, weight: 60, description: description, armorClass: 17, strength: 15)
     }
 }
 class Plate: HeavyArmor {
     init() {
         let description = DescriptionArmor.plate.description()
-        super.init(name: "Латы", cost: 1500_00, weight: 65, description: description, armorClass: 18, strength: 15)
+        super.init(name: "Латы", cost: 1500_000, weight: 65, description: description, armorClass: 18, strength: 15)
     }
 }
 //MARK: Обычный щит
 class UsualShield: Shield {
     init() {
         let description = DescriptionArmor.shield.description()
-        super.init(name: "Обычный щит", cost: 10_00, weight: 6, description: description, armorClass: 2)
+        super.init(name: "Обычный щит", cost: 10_000, weight: 6, description: description, armorClass: 2)
     }
 }
 
