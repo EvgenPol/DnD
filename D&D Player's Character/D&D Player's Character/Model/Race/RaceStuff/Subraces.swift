@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum Subraces {
-    //Dwarf
-    case hillDwarf
-    case mountainDwarf
+enum Subraces: String {
+    case hillDwarf = "Холмовой дворф"
+    case mountainDwarf = "Горный дворф"
+    case duergar = "Дуэргар"
 }

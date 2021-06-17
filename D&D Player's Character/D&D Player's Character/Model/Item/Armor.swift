@@ -17,6 +17,11 @@ class Armor: Item {
     let modifier:String?
     let don: Int
     let doff: Int
+    
+    class func getAllSubclasses () -> [Armor] {
+        [Padded(), Leather(), StuddedLeather(), Hide(), ChainShirt(), ScaleMail(), Breastplate(), HalfPlate(), RingMail(), ChainMail(), Splint(), Plate()]
+    }
+    
     init(name:String, cost:Double, weight:Double, description:String, armorClass:Int, stealthDisadvantage:Bool, strength:Int?, type:String, modifier:String?, don:Int, doff:Int ) {
         super.init(name: name, cost: cost, weight: weight, description: description)
         self.armorClass = armorClass
@@ -29,43 +34,58 @@ class Armor: Item {
 }
 //MARK: виды брони + щит
 class LightArmor: Armor {
+    override class func getAllSubclasses() -> [Armor] {
+        [Padded(), Leather(), StuddedLeather()]
+    }
     init(name:String, cost:Double, weight:Double, description:String, armorClass:Int, stealthDisadvantage:Bool) {
-        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: stealthDisadvantage, strength: nil, type: "Лёгкие", modifier: "Dex modifier", don: 1, doff: 1)
+        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: stealthDisadvantage, strength: nil, type: "LightArmor", modifier: "Dex modifier", don: 1, doff: 1)
     }
 }
 
 class MediumArmor: Armor {
+    override class func getAllSubclasses() -> [Armor] {
+        [Hide(), ChainShirt(), ScaleMail(), Breastplate(), HalfPlate()]
+    }
     init(name: String, cost: Double, weight: Double, description: String, armorClass: Int, stealthDisadvantage: Bool) {
-        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: stealthDisadvantage, strength: nil, type: "Средние", modifier: "Dex modifier (max 2)", don: 5, doff: 1)
+        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: stealthDisadvantage, strength: nil, type: "MediumArmor", modifier: "Dex modifier (max 2)", don: 5, doff: 1)
     }
 }
 
 class HeavyArmor: Armor {
+    override class func getAllSubclasses() -> [Armor] {
+        [RingMail(), ChainMail(), Splint(), Plate()]
+    }
     init(name:String, cost:Double, weight:Double, description:String, armorClass:Int, strength:Int?) {
-        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: true, strength: strength, type: "Тяжелые", modifier: nil, don: 10, doff: 5)
+        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: true, strength: strength, type: "HeavyArmor", modifier: nil, don: 10, doff: 5)
     }
 }
 
 class Shield: Armor {
+    override class func getAllSubclasses() -> [Armor] {
+        [UsualShield()]
+    }
     init(name: String, cost: Double, weight: Double, description: String, armorClass: Int) {
-        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: false, strength: nil, type: "Щит", modifier: nil, don: 0, doff: 0)
+        super.init(name: name, cost: cost, weight: weight, description: description, armorClass: armorClass, stealthDisadvantage: false, strength: nil, type: "Shield", modifier: nil, don: 0, doff: 0)
     }
 }
 
 //MARK: Виды легкой брони
 class Padded: LightArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.padded.description()
         super.init(name: "Стеганные доспехи", cost: 5_000, weight: 8, description:description, armorClass: 11, stealthDisadvantage: true)
     }
 }
 class Leather: LightArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.leather.description()
         super.init(name: "Кожанные доспехи", cost: 10_000, weight: 10, description: description, armorClass: 11, stealthDisadvantage: false)
     }
 }
 class StuddedLeather: LightArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.studdedLeather.description()
         super .init(name: "Клепанные доспехи", cost: 45_000, weight: 13, description: description, armorClass: 12, stealthDisadvantage: false)
@@ -73,30 +93,36 @@ class StuddedLeather: LightArmor {
 }
 //MARK: Виды средней броны
 class Hide: MediumArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.hide.description()
         super.init(name: "Сыромятные доспехи", cost: 10_000, weight: 12, description: description, armorClass: 12, stealthDisadvantage: false)
     }
 }
 class ChainShirt: MediumArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.chainShirt.description()
         super.init(name: "Кольчужная рубаха", cost: 50_000, weight: 20, description: description, armorClass: 13, stealthDisadvantage: false)
     }
 }
 class ScaleMail: MediumArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.scaleMail.description()
         super.init(name: "Чешуйчатые доспехи", cost: 50_000, weight: 45, description: description, armorClass: 14, stealthDisadvantage: true)
     }
 }
 class Breastplate: MediumArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.breastplate.description()
         super.init(name: "Нагрудник", cost: 400_000, weight: 20, description: description, armorClass: 14, stealthDisadvantage: false)
     }
 }
+
 class HalfPlate: MediumArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.halfPlate.description()
         super.init(name: "Полулаты", cost: 750_000, weight: 40, description: description, armorClass: 15, stealthDisadvantage: true)
@@ -104,24 +130,28 @@ class HalfPlate: MediumArmor {
 }
 //MARK: Виды тяжелой брони
 class RingMail: HeavyArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.ringMail.description()
         super.init(name: "Кольчатые доспехи", cost: 30_000, weight: 40, description: description, armorClass: 14, strength: nil)
     }
 }
 class ChainMail: HeavyArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.chainMail.description()
         super.init(name: "Кольчуга", cost: 75_000, weight: 55, description: description, armorClass: 16, strength: 13)
     }
 }
 class Splint: HeavyArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.splint.description()
         super.init(name: "Пластинчатые доспехи", cost: 200_000, weight: 60, description: description, armorClass: 17, strength: 15)
     }
 }
 class Plate: HeavyArmor {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.plate.description()
         super.init(name: "Латы", cost: 1500_000, weight: 65, description: description, armorClass: 18, strength: 15)
@@ -129,6 +159,7 @@ class Plate: HeavyArmor {
 }
 //MARK: Обычный щит
 class UsualShield: Shield {
+    override class func getAllSubclasses() -> [Armor] { [] }
     init() {
         let description = DescriptionArmor.shield.description()
         super.init(name: "Обычный щит", cost: 10_000, weight: 6, description: description, armorClass: 2)

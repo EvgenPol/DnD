@@ -7,24 +7,24 @@
 
 import Foundation
 
-enum Languages {
+enum Languages: String {
     //standard's language
-    case common
-    case dwarvish
-    case elvish
-    case giant
-    case gnomish
-    case goblin
-    case hafling
-    case orc
+    case common = "Общий"
+    case dwarvish = "Дворфийский"
+    case elvish = "Эльфийский"
+    case giant = "Язык великанов"
+    case gnomish = "Гномский"
+    case goblin = "Гоблинский"
+    case hafling = "Язык халфлингов"
+    case orc = "Орочий"
     
     //exotic language
-    case abyssal
-    case celestial
-    case draconic
-    case deepSpeech
-    case infernal
-    case primordial
-    case sylvan
-    case undercommon
+    case abyssal = "Адский"
+    case celestial = "Божественный"
+    case draconic = "Драконий"
+    case deepSpeech = "Нижний"
+    case infernal = "Инфернальный"
+    case primordial = "Первородный"
+    case sylvan = "Сильванский"
+    case undercommon = "Подземный"
 }

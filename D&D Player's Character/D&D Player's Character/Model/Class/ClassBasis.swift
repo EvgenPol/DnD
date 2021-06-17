@@ -8,36 +8,31 @@
 import Foundation
 
 class ClassBasis {
+    
     var level = 1
+    let hitDie:Dices
+    let features:[Features]
+    let primaryAbility:[Ability]
+    let skills:[Skills]
+    let savingThrowProficiencies:[Ability]
+    let toolsProficiencies:[Tools]
+    let armorProficiencies:[Armor]
+    let weaponProficiencies:[Weapon]
     
-    var hitDie:Dices!
-    
-    var tools:Tools!
-    var skills:[Skills]!
-    var features:Features!
-    var savingThrowProficiencies:[String]!
-    var primalAbilites:[String]!
-    var advantage:[String] = []
-    var resistance:[String] = []
-    var armorProficiencies:[Any]!
-    var weaponProficiencies:[Any]!
-    var startEquipment:StartEquipment!
-    
-    var proficiencyBonus:Int {
-        switch level {
-        case 1...4:
-            return 2
-        case 5...8:
-            return 3
-        case 9...12:
-            return 4
-        case 13...16:
-            return 5
-        default:
-            return 6
-        }
+    func hitForLevel_1 (constitutionModifier:Int) -> Int {
+        Dices.throwing(cast: 1, dice: hitDie) + constitutionModifier
     }
     
-    func useFeatures(features:Features){ }
+    func nextLevel () {}
     
+    init(hitDie:Dices, features:[Features], primaryAbility:[Ability], skills:[Skills], , savingThrowProficiencies:[Ability], toolsProficiencies:[Tools], armorProficiencies:[Armor], weaponProficiencies:[Weapon]) {
+        self.hitDie = hitDie
+        self.features = features
+        self.primaryAbility = primaryAbility
+        self.skills = skills
+        self.savingThrowProficiencies = savingThrowProficiencies
+        self.toolsProficiencies = toolsProficiencies
+        self.armorProficiencies = armorProficiencies
+        self.weaponProficiencies = weaponProficiencies
+    }
 }

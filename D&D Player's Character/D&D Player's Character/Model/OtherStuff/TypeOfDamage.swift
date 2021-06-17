@@ -7,20 +7,20 @@
 
 import Foundation
 
-enum TypeOfDamage {
+enum TypeOfDamage: String {
     
-    case piercing
-    case slashing
-    case bludgeoning
-    case acid
-    case cold
-    case fire
-    case force
-    case lightning
-    case necrotic
-    case poison
-    case psychic
-    case radiant
-    case thunder
+    case piercing = "Колющий"
+    case slashing = "Режущий"
+    case bludgeoning = "Дробящий"
+    case acid = "Кислота"
+    case cold = "Холод"
+    case fire = "Огонь"
+    case force = "Сила"
+    case lightning = "Молния"
+    case necrotic = "Некротический"
+    case poison = "Яд"
+    case psychic = "Психический"
+    case radiant = "Свет"
+    case thunder = "Звук"
     
 }

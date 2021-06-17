@@ -30,38 +30,40 @@ class Weapon: Item {
     }
 }
 //MARK: Протоколы для свойств оружия
-fileprivate protocol Special {}
-fileprivate protocol Finesse {}
-fileprivate protocol Heavy {}
-fileprivate protocol Light {}
-fileprivate protocol Reach {}
-fileprivate protocol Thrown {}
-fileprivate protocol TwoHanded {}
-fileprivate protocol AmmunitionPr {
+
+// ...W is "Weapon"
+ protocol SpecialW {}
+ protocol FinesseW {}
+ protocol HeavyW {}
+ protocol LightW {}
+ protocol ReachW {}
+ protocol ThrownW {}
+ protocol TwoHandedW {}
+ protocol AmmunitionW {
     var ammo: Ammunition.Ammo {get}
     var charged: Bool {get set}
 }
-fileprivate protocol Loading {
+ protocol LoadingW {
     var chargedInThisRound: Bool {get set}
 }
-fileprivate protocol Range {
+ protocol RangeW {
     var range: (normal:Int, max:Int) {get}
 }
-fileprivate protocol Versatile {
+ protocol VersatileW {
     var damageForTwoHand: (Int, TypeOfDamage?) {get}
 }
-
+//
 //MARK: Оружия
 //MARK: Простое Ближнее
 //
-class Club: Weapon, Light {
+class Club: Weapon, LightW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .bludgeoning) }
     init() {
         super.init(name:"Дубинка", cost:1, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light])
     }
 }
 //
-class Dagger: Weapon, Finesse, Light, Thrown, Range {
+class Dagger: Weapon, FinesseW, LightW, ThrownW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .piercing) }
     init() {
@@ -70,14 +72,14 @@ class Dagger: Weapon, Finesse, Light, Thrown, Range {
 }
 
 //
-class GreatClub: Weapon, TwoHanded {
+class GreatClub: Weapon, TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .bludgeoning) }
     init() {
         super.init(name:"Большая дубина", cost:2, weight:10, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.twoHanded])
     }
 }
 //
-class HandAxe: Weapon, Light, Thrown, Range {
+class HandAxe: Weapon, LightW, ThrownW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .slashing) }
     init() {
@@ -86,14 +88,14 @@ class HandAxe: Weapon, Light, Thrown, Range {
 }
 
 //
-class Javelin: Weapon, Thrown {
+class Javelin: Weapon, ThrownW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     init() {
         super.init(name:"Метательное копье", cost:5, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.thrown])
     }
 }
 //
-class LightHammer: Weapon, Light, Thrown, Range {
+class LightHammer: Weapon, LightW, ThrownW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .bludgeoning) }
     init() {
@@ -108,7 +110,7 @@ class Mace: Weapon {
     }
 }
 //
-class QuarterStaff: Weapon, Versatile {
+class QuarterStaff: Weapon, VersatileW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .bludgeoning) }
     var damageForTwoHand: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .bludgeoning) }
     init() {
@@ -116,14 +118,14 @@ class QuarterStaff: Weapon, Versatile {
     }
 }
 //
-class Sickle: Weapon, Light {
+class Sickle: Weapon, LightW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .slashing) }
     init() {
         super.init(name:"Серп", cost:1_000, weight:2, description:"", distance:.melee, typeOfWeapon:.simple, properties:[.light])
     }
 }
 //
-class Spear: Weapon, Thrown, Versatile, Range {
+class Spear: Weapon, ThrownW, VersatileW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     var damageForTwoHand: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
@@ -134,7 +136,7 @@ class Spear: Weapon, Thrown, Versatile, Range {
 
 //MARK: Простое Дальнее
 //
-class CrossbowLight: Weapon, AmmunitionPr, Loading, TwoHanded, Range {
+class CrossbowLight: Weapon, AmmunitionW, LoadingW, TwoHandedW, RangeW {
     let ammo: Ammunition.Ammo = .crossbowBolt
     let range: (normal: Int, max: Int) = (80, 320)
     var charged = false
@@ -145,7 +147,7 @@ class CrossbowLight: Weapon, AmmunitionPr, Loading, TwoHanded, Range {
     }
 }
 //
-class Dart: Weapon, Finesse, Thrown, Range {
+class Dart: Weapon, FinesseW, ThrownW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .piercing) }
     init() {
@@ -153,7 +155,7 @@ class Dart: Weapon, Finesse, Thrown, Range {
     }
 }
 //
-class ShortBow: Weapon, AmmunitionPr, TwoHanded, Range {
+class ShortBow: Weapon, AmmunitionW, TwoHandedW, RangeW {
     let ammo: Ammunition.Ammo = .arrow
     let range: (normal: Int, max: Int) = (80, 320)
     var charged = false
@@ -163,7 +165,7 @@ class ShortBow: Weapon, AmmunitionPr, TwoHanded, Range {
     }
 }
 //
-class Sling: Weapon, AmmunitionPr, Range {
+class Sling: Weapon, AmmunitionW, RangeW {
     let ammo: Ammunition.Ammo = .slingBullets
     let range: (normal: Int, max: Int) = (30,120)
     var charged = false
@@ -175,7 +177,7 @@ class Sling: Weapon, AmmunitionPr, Range {
 
 //MARK: Боевое Ближнее
 //
-class BattleAxe: Weapon, Versatile {
+class BattleAxe: Weapon, VersatileW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .slashing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
@@ -190,42 +192,42 @@ class Flail: Weapon {
     }
 }
 //
-class Glaive: Weapon, Heavy, Reach, TwoHanded{
+class Glaive: Weapon, HeavyW, ReachW, TwoHandedW{
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
         super.init(name:"Глефа", cost:20_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
-class GreatAxe: Weapon, Heavy, TwoHanded {
+class GreatAxe: Weapon, HeavyW, TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d12), .slashing) }
     init() {
         super.init(name:"Двуручный топор", cost:30_000, weight:7, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
     }
 }
 //
-class GreatSword: Weapon, Heavy, TwoHanded {
+class GreatSword: Weapon, HeavyW, TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 2, dice: .d6), .slashing) }
     init() {
         super.init(name:"Двуручный меч", cost:50_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
     }
 }
 //
-class Halberd: Weapon, Heavy, Reach, TwoHanded {
+class Halberd: Weapon, HeavyW, ReachW, TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
         super.init(name:"Алебарда", cost:20_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
-class Lance: Weapon, Reach, Special {
+class Lance: Weapon, ReachW, SpecialW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d12), .piercing) }
     init() {
         super.init(name: "Рыцарское копье", cost:10_000, weight:6, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.reach,.special])
     }
 }
 //
-class LongSword: Weapon, Versatile {
+class LongSword: Weapon, VersatileW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .slashing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d10), .slashing) }
     init() {
@@ -233,7 +235,7 @@ class LongSword: Weapon, Versatile {
     }
 }
 //
-class Maul: Weapon, Heavy, TwoHanded {
+class Maul: Weapon, HeavyW, TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 2, dice: .d6), .bludgeoning) }
     init() {
         super.init(name:"Молот", cost:10_000, weight:10, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.twoHanded])
@@ -247,35 +249,35 @@ class MorningStar: Weapon {
     }
 }
 //
-class Pike: Weapon, Heavy, Reach,TwoHanded {
+class Pike: Weapon, HeavyW, ReachW,TwoHandedW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .piercing) }
     init() {
         super.init(name:"Пика", cost:5_000, weight:18, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.heavy,.reach,.twoHanded])
     }
 }
 //
-class Rapier: Weapon, Finesse {
+class Rapier: Weapon, FinesseW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
     init() {
         super.init(name:"Рапира", cost:25_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse])
     }
 }
 //
-class Scimitar: Weapon, Finesse, Light {
+class Scimitar: Weapon, FinesseW, LightW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .slashing) }
     init() {
         super.init(name:"Скимитар", cost:25_000, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
     }
 }
 //
-class ShortSword: Weapon, Finesse, Light {
+class ShortSword: Weapon, FinesseW, LightW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     init() {
         super.init(name:"Короткий меч", cost:10_000, weight:2, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.light])
     }
 }
 //
-class Trident: Weapon, Thrown, Versatile, Range {
+class Trident: Weapon, ThrownW, VersatileW, RangeW {
     let range: (normal: Int, max: Int) = (20,60)
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d6), .piercing) }
     var damageForTwoHand: (Int, TypeOfDamage?)  { (Dices.throwing(cast: 1, dice: .d8), .piercing) }
@@ -291,7 +293,7 @@ class WarPick: Weapon {
     }
 }
 //
-class Warhammer: Weapon, Versatile {
+class Warhammer: Weapon, VersatileW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d8), .bludgeoning) }
     var damageForTwoHand: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d10), .bludgeoning) }
     init() {
@@ -299,7 +301,7 @@ class Warhammer: Weapon, Versatile {
     }
 }
 //
-class Whip: Weapon, Finesse, Reach {
+class Whip: Weapon, FinesseW, ReachW {
     override var damage: (Int, TypeOfDamage?) { (Dices.throwing(cast: 1, dice: .d4), .slashing) }
     init() {
         super.init(name:"Кнут", cost:2_000, weight:3, description:"", distance:.melee, typeOfWeapon:.martial, properties:[.finesse,.reach])
@@ -307,7 +309,7 @@ class Whip: Weapon, Finesse, Reach {
 }
 //MARK: Боевое Дальнеe
 //
-class Blowgun: Weapon, AmmunitionPr, Loading, Range {
+class Blowgun: Weapon, AmmunitionW, LoadingW, RangeW {
     let ammo: Ammunition.Ammo = .blowgunNeedles
     let range: (normal: Int, max: Int) = (25,100)
     var charged = false
@@ -318,7 +320,7 @@ class Blowgun: Weapon, AmmunitionPr, Loading, Range {
     }
 }
 //
-class CrossbowHand: Weapon, AmmunitionPr, Light, Loading, Range {
+class CrossbowHand: Weapon, AmmunitionW, LightW, LoadingW, RangeW {
     let ammo: Ammunition.Ammo = .crossbowBolt
     let range: (normal: Int, max: Int) = (30,120)
     var charged = false
@@ -329,7 +331,7 @@ class CrossbowHand: Weapon, AmmunitionPr, Light, Loading, Range {
     }
 }
 //
-class CrossbowHeavy: Weapon, AmmunitionPr, Heavy, Loading,TwoHanded, Range {
+class CrossbowHeavy: Weapon, AmmunitionW, HeavyW, LoadingW,TwoHandedW, RangeW {
     let ammo: Ammunition.Ammo = .crossbowBolt
     let range: (normal: Int, max: Int) = (100,400)
     var charged = false
@@ -340,7 +342,7 @@ class CrossbowHeavy: Weapon, AmmunitionPr, Heavy, Loading,TwoHanded, Range {
     }
 }
 //
-class Longbow: Weapon, AmmunitionPr, Heavy, TwoHanded,Range {
+class Longbow: Weapon, AmmunitionW, HeavyW, TwoHandedW,RangeW {
     let ammo: Ammunition.Ammo = .arrow
     let range: (normal: Int, max: Int) = (150,600)
     var charged = false
@@ -350,10 +352,41 @@ class Longbow: Weapon, AmmunitionPr, Heavy, TwoHanded,Range {
     }
 }
 //
-class Net: Weapon, Special, Thrown, Range {
+class Net: Weapon, SpecialW, ThrownW, RangeW {
     let range: (normal: Int, max: Int) = (5,15)
     override var damage: (Int, TypeOfDamage?) { (0, nil) }
     init() {
         super.init(name:"Cеть", cost:1_000, weight:3, description:"", distance:.ranged, typeOfWeapon:.martial, properties:[.special,.thrown,.range])
+    }
+}
+
+extension Weapon {
+    static func getSimpleWeapon () -> [Weapon] {
+        [ Club(), Dagger(), GreatClub(), HandAxe(), Javelin(), LightHammer(), Mace(), QuarterStaff(), Sickle(), Spear(),
+         CrossbowLight(), Dart(), ShortBow(), Sling() ]
+    }
+    static func getMartialWeapon () -> [Weapon] {
+        [BattleAxe(), Flail(), Glaive(), GreatAxe(), GreatSword(), Halberd(), Lance(), LongSword(), Maul(), MorningStar(), Pike(), Rapier(), Scimitar(), ShortSword(), Trident(), WarPick(), Warhammer(),
+         Blowgun(), CrossbowHand(), CrossbowHeavy(), Longbow(), Net() ]
+    }
+    static func getSimpleMeleeWeapon () -> [Weapon] {
+        [Club(), Dagger(), GreatClub(), HandAxe(), Javelin(), LightHammer(), Mace(), QuarterStaff(), Sickle(), Spear()]
+    }
+    static func getSimpleRangedWeapon () -> [Weapon] {
+        [CrossbowLight(), Dart(), ShortBow(), Sling()]
+    }
+    static func getMartialMeleeWeapon () -> [Weapon] {
+        [BattleAxe(), Flail(), Glaive(), GreatAxe(), GreatSword(), Halberd(), Lance(), LongSword(), Maul(), MorningStar(), Pike(), Rapier(), Scimitar(), ShortSword(), Trident(), WarPick(), Warhammer()]
+    }
+    static func getMartialRangedWeapon () -> [Weapon] {
+        [Blowgun(), CrossbowHand(), CrossbowHeavy(), Longbow(), Net()]
+    }
+    static func getMeleeWeapon () -> [Weapon] {
+        [ Club(), Dagger(), GreatClub(), HandAxe(), Javelin(), LightHammer(), Mace(), QuarterStaff(), Sickle(), Spear(),
+          BattleAxe(), Flail(), Glaive(), GreatAxe(), GreatSword(), Halberd(), Lance(), LongSword(), Maul(), MorningStar(), Pike(), Rapier(), Scimitar(), ShortSword(), Trident(), WarPick(), Warhammer()]
+    }
+    static func getRangedWeapon () -> [Weapon] {
+        [CrossbowLight(), Dart(), ShortBow(), Sling(),
+         Blowgun(), CrossbowHand(), CrossbowHeavy(), Longbow(), Net() ]
     }
 }

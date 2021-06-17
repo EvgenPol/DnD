@@ -13,7 +13,12 @@ struct Inventory {
     var wealth = Wealth()
     var equipment = Equipment()
     var unEquipment = UnEquipment()
+    
+    func startEquipment (class:ClassBasis) {
+        a
+    }
 }
+
 
 extension Inventory {
     struct Wealth {

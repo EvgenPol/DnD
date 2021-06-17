@@ -7,10 +7,13 @@
 
 import Foundation
 
-enum Traits {
+enum Traits:String {
     //Dwarf
-    case darkvision
-    case dwarvenResilience
-    case dwarvenCombatTraining
-    case stoneCunning
+    case darkvision = "Темновидение"
+    case dwarvenResilience = "Дворфийская стойкость"
+    case dwarvenCombatTraining = "Боевая тренировка"
+    case stoneCunning = "Знание камня"
+    case dwarvenToughness = "Дворфийская крепость"
+    case dwarvenArmorTraining = "Владение доспехами"
+    
 }
