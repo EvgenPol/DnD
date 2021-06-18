@@ -40,6 +40,7 @@
 		6CF3E971263EBACA00910CE5 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E970263EBACA00910CE5 /* Dwarf.swift */; };
 		6CF3E975263EC0B500910CE5 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E974263EC0B500910CE5 /* Names.swift */; };
 		6CF3E978263EC42B00910CE5 /* Alignment and Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E977263EC42B00910CE5 /* Alignment and Size.swift */; };
+		6CFF96C4267D31DB00D60377 /* ClassPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF96C3267D31DB00D60377 /* ClassPaths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		6CF3E970263EBACA00910CE5 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 		6CF3E974263EC0B500910CE5 /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 		6CF3E977263EC42B00910CE5 /* Alignment and Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment and Size.swift"; sourceTree = "<group>"; };
+		6CFF96C3267D31DB00D60377 /* ClassPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPaths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,6 @@
 		6CBECFDE265D55A80089E20B /* Inventory */ = {
 			isa = PBXGroup;
 			children = (
-				6CBECFDF265D56780089E20B /* Inventory.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -149,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				6C4DAA77267B75B3002FA966 /* Features */,
+				6CFF96C3267D31DB00D60377 /* ClassPaths.swift */,
 				6CCB96A526517C8E00CC4F93 /* StartEquipment.swift */,
 			);
 			path = ClassStuff;
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				6CBECFDE265D55A80089E20B /* Inventory */,
+				6CBECFDF265D56780089E20B /* Inventory.swift */,
 				6CBECFD4265BD10D0089E20B /* Item */,
 				6CCB96AC2651833800CC4F93 /* OtherStuff */,
 				6CF3E96B263EB71F00910CE5 /* Race */,
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CFF96C4267D31DB00D60377 /* ClassPaths.swift in Sources */,
 				6CBECFD9265BD10D0089E20B /* ItemRootClass.swift in Sources */,
 				6CCB969C26516BFE00CC4F93 /* Subraces.swift in Sources */,
 				6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */,

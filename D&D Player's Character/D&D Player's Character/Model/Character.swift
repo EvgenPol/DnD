@@ -23,7 +23,10 @@ class Character {
     var alignment:Alignment
     var additionHP = 0
     let resistance:[String]
-    var armorClass = 10
+    var armorClass:Int { 0 }
+    var inventory = Inventory()
+        
+    
     var personality:Personality!
     var background:Background!
     var proficiencyBonus:Int {
@@ -36,7 +39,7 @@ class Character {
         }
     }
     
-    func modifier(parametr:String) -> Int {
+    func modifier(parametr:Ability) -> Int {
         
     }
     
@@ -53,8 +56,29 @@ class Character {
         self.resistance = classOfChar.resistance
     }
     
-    
+    func findDefence () -> Int {
+        var defence = 0
+        for `class` in classOfChar {
+            //Обрабатывает случай когда умение бездоспешная защита Варвара действует
+            if `class` is BarbarianClass && `class`.features.contains(where: {$0 is UnarmoredDefence}) && inventory.equipment.armor == nil {
+                // проверка на наличие щита
+                ((inventory.equipment.leftHand is Shield) || (inventory.equipment.rightHand is Shield)) ? (defence = 2) : (defence = 0)
+                defence += 10 + modifier(parametr: .dexterity) + modifier(parametr: .constitution)
+            }
+        }
+        return defence
+    }
     init() {
+        
+    }
+    
+    func physicalAttack (anotherChar: Character, item: Item) {
+        switch item.typeOfWeapon {
+        case .improvised: 
+        }
+    }
+    
+    func massAttack () {
         
     }
 }

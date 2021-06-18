@@ -9,7 +9,6 @@ import Foundation
 
 class Weapon: Item {
     let distance:Distance
-    let typeOfWeapon:TypeOfWeapon
     let properties: [Properties]
     var damage: (Int, TypeOfDamage?) { (0, .bludgeoning) }
     

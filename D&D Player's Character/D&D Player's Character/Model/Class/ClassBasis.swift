@@ -18,6 +18,21 @@ class ClassBasis {
     let toolsProficiencies:[Tools]
     let armorProficiencies:[Armor]
     let weaponProficiencies:[Weapon]
+    let path:ClassPaths!
+    //MARK: Преимущства, помехи и резисты есть у классов чар и классЧар, надо пересмотреть
+    var advantage = [String]()
+    var disadvantage = [String]()
+    var resistance = [TypeOfDamage]()
+    
+    func damage (condition: [() -> Bool]) -> Int {
+        0
+    }
+    func defense(condition: [() -> Bool]) -> Int {
+        0
+    }
+    func useFeatures(condition: () -> Bool, feature: Features) {
+      
+    }
     
     func hitForLevel_1 (constitutionModifier:Int) -> Int {
         Dices.throwing(cast: 1, dice: hitDie) + constitutionModifier
@@ -25,7 +40,7 @@ class ClassBasis {
     
     func nextLevel () {}
     
-    init(hitDie:Dices, features:[Features], primaryAbility:[Ability], skills:[Skills], , savingThrowProficiencies:[Ability], toolsProficiencies:[Tools], armorProficiencies:[Armor], weaponProficiencies:[Weapon]) {
+    init(hitDie:Dices, features:[Features], primaryAbility:[Ability], skills:[Skills], savingThrowProficiencies:[Ability], toolsProficiencies:[Tools], armorProficiencies:[Armor], weaponProficiencies:[Weapon]) {
         self.hitDie = hitDie
         self.features = features
         self.primaryAbility = primaryAbility
