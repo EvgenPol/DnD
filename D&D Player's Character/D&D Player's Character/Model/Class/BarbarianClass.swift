@@ -12,25 +12,21 @@ class BarbarianClass: ClassBasis {
    override func nextLevel() {
         level+=1
         switch level {
-        case 2: 
+        case 2:
+            features += ["UnarmoredDefence": UnarmoredDefence()]
+            
+        
         default:
-            <#code#>
+            
         }
     }
     // принимает массив доп условий - замыканий, 0 - носит ли персонаж броню, для умения Rage
     override func damage(condition: [() -> Bool]) -> Int {
-        
         var total = 0
-        for feature in features {
-            switch feature {
-            case is Rage :
-                let rage = feature as! Rage
-                (rage.enabled && condition[0]() ) ? (total += rage.damage) : ()
-            case is
-            default: return 0
-            }
-        }
+        let rage = features["Rage"] as! Rage
+        (rage.enabled && condition[0]() ) ? (total += rage.damage) : ()
     }
+    
     override func defense(condition: [() -> Bool]) -> Int {
     
     }
@@ -39,7 +35,7 @@ class BarbarianClass: ClassBasis {
     
     //MARK:Проверка по спасброскам и броскам по параметрам одинакова!
     private func useRage() {
-        let rage = features[0] as! Rage
+        let rage = features["Rage"] as! Rage
         if rage.enabled {
             rage.enabled = false
             advantage.remove(at: advantage.firstIndex(of: "strenght")!)
@@ -55,7 +51,7 @@ class BarbarianClass: ClassBasis {
     }
     
     private func useRecklessAttack() {
-        let recklessAttack = features[2] as! RecklessAttack
+        let recklessAttack = features["RecklessAttack"] as! RecklessAttack
         (recklessAttack.reckless) ? (recklessAttack.reckless = false) : (recklessAttack.reckless = true)
     }
 
@@ -70,7 +66,7 @@ class BarbarianClass: ClassBasis {
     init(skills:[Skills]) {
         let armorProficiencies = [LightArmor.getAllSubclasses(), MediumArmor.getAllSubclasses(), Shield.getAllSubclasses()]
         let weaponProficiencies = [Weapon.getSimpleWeapon(), Weapon.getMartialWeapon()]
-        super.init(hitDie: Dices.d12, features: [Rage()], primaryAbility: [Ability.strenght], skills: skills, savingThrowProficiencies: [Ability.strenght, .constitution], toolsProficiencies: [], armorProficiencies: armorProficiencies, weaponProficiencies: weaponProficiencies )
+        super.init(hitDie: Dices.d12, features: ["Rage": Rage()], primaryAbility: [Ability.strenght], skills: skills, savingThrowProficiencies: [Ability.strenght, .constitution], toolsProficiencies: [], armorProficiencies: armorProficiencies, weaponProficiencies: weaponProficiencies )
     }
     
 }

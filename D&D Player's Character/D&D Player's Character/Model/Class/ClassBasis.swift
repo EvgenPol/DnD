@@ -11,7 +11,7 @@ class ClassBasis {
     
     var level = 1
     let hitDie:Dices
-    let features:[Features]
+    var features:[String:Features]
     let primaryAbility:[Ability]
     let skills:[Skills]
     let savingThrowProficiencies:[Ability]

@@ -72,11 +72,18 @@ class Character {
         
     }
     
-    func physicalAttack (anotherChar: Character, item: Item) {
-        switch item.typeOfWeapon {
-        case .improvised: 
-        }
+    func physicalAttackImprovised (anotherChar: Character, characteristic: (Int, TypeOfDamage)) {
+        
     }
+    func physicalAttackWeapon (anotherChar: Character, item: Item) {
+        let weapon = item as! Weapon
+        var damage = weapon.damage
+        
+    }
+        
+        private func physicalAttack () -> Int {
+            
+        }
     
     func massAttack () {
         

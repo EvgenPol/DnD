@@ -7,7 +7,9 @@
 
 import Foundation
 
-class Features {
+class Features: RangeReplaceableCollection {
+    typealias SubSequence = String
+    
     let name:String
     
     //static func for increase parametrs on 4,8,12,16,19 levels
