@@ -15,6 +15,8 @@
 		6C4DAA75267B7444002FA966 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DAA74267B7444002FA966 /* Translate.swift */; };
 		6C4DAA79267B75B3002FA966 /* FeaturesRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DAA78267B75B3002FA966 /* FeaturesRoot.swift */; };
 		6C4DAA7B267B75E0002FA966 /* BarbarianFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4DAA7A267B75E0002FA966 /* BarbarianFeatures.swift */; };
+		6C80925A2688767800FB8D4A /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8092592688767800FB8D4A /* RaceViewController.swift */; };
+		6C80925E268A387200FB8D4A /* ShortInfoRace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C80925D268A387200FB8D4A /* ShortInfoRace.swift */; };
 		6C9E597426779BE300060D61 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9E597326779BE300060D61 /* Weapon.swift */; };
 		6CBECFD9265BD10D0089E20B /* ItemRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD6265BD10D0089E20B /* ItemRootClass.swift */; };
 		6CBECFDA265BD10D0089E20B /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBECFD7265BD10D0089E20B /* Tools.swift */; };
@@ -29,9 +31,12 @@
 		6CCB96AE2651834F00CC4F93 /* Dices&Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96AD2651834F00CC4F93 /* Dices&Money.swift */; };
 		6CCB96B32651847400CC4F93 /* Ability, Skills, SavingThrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96B22651847400CC4F93 /* Ability, Skills, SavingThrow.swift */; };
 		6CCB96BA26518B4500CC4F93 /* BarbarianClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCB96B926518B4500CC4F93 /* BarbarianClass.swift */; };
+		6CD9A34C267F82B800B0DED3 /* ClassPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD9A34B267F82B800B0DED3 /* ClassPaths.swift */; };
+		6CE872912687AA11000E1394 /* CreateHeroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE872902687AA11000E1394 /* CreateHeroController.swift */; };
+		6CE89A6E26810676009B8F9C /* HP and XP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE89A6D26810676009B8F9C /* HP and XP.swift */; };
 		6CF3E94C263EB33200910CE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94B263EB33200910CE5 /* AppDelegate.swift */; };
 		6CF3E94E263EB33200910CE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94D263EB33200910CE5 /* SceneDelegate.swift */; };
-		6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94F263EB33200910CE5 /* ViewController.swift */; };
+		6CF3E950263EB33200910CE5 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E94F263EB33200910CE5 /* StartController.swift */; };
 		6CF3E953263EB33200910CE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E951263EB33200910CE5 /* Main.storyboard */; };
 		6CF3E955263EB33900910CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E954263EB33900910CE5 /* Assets.xcassets */; };
 		6CF3E958263EB33900910CE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF3E956263EB33900910CE5 /* LaunchScreen.storyboard */; };
@@ -40,7 +45,6 @@
 		6CF3E971263EBACA00910CE5 /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E970263EBACA00910CE5 /* Dwarf.swift */; };
 		6CF3E975263EC0B500910CE5 /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E974263EC0B500910CE5 /* Names.swift */; };
 		6CF3E978263EC42B00910CE5 /* Alignment and Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF3E977263EC42B00910CE5 /* Alignment and Size.swift */; };
-		6CFF96C4267D31DB00D60377 /* ClassPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFF96C3267D31DB00D60377 /* ClassPaths.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +56,8 @@
 		6C4DAA74267B7444002FA966 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
 		6C4DAA78267B75B3002FA966 /* FeaturesRoot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturesRoot.swift; sourceTree = "<group>"; };
 		6C4DAA7A267B75E0002FA966 /* BarbarianFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbarianFeatures.swift; sourceTree = "<group>"; };
-		6C4DAA7D267BABDA002FA966 /* DND_Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DND_Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		6C8092592688767800FB8D4A /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
+		6C80925D268A387200FB8D4A /* ShortInfoRace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortInfoRace.swift; sourceTree = "<group>"; };
 		6C9E597326779BE300060D61 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		6CBECFD6265BD10D0089E20B /* ItemRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRootClass.swift; sourceTree = "<group>"; };
 		6CBECFD7265BD10D0089E20B /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
@@ -67,10 +72,13 @@
 		6CCB96AD2651834F00CC4F93 /* Dices&Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dices&Money.swift"; sourceTree = "<group>"; };
 		6CCB96B22651847400CC4F93 /* Ability, Skills, SavingThrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ability, Skills, SavingThrow.swift"; sourceTree = "<group>"; };
 		6CCB96B926518B4500CC4F93 /* BarbarianClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarbarianClass.swift; sourceTree = "<group>"; };
+		6CD9A34B267F82B800B0DED3 /* ClassPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPaths.swift; sourceTree = "<group>"; };
+		6CE872902687AA11000E1394 /* CreateHeroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHeroController.swift; sourceTree = "<group>"; };
+		6CE89A6D26810676009B8F9C /* HP and XP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HP and XP.swift"; sourceTree = "<group>"; };
 		6CF3E948263EB33200910CE5 /* D&D Player's Character.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D Player's Character.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CF3E94B263EB33200910CE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CF3E94D263EB33200910CE5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6CF3E94F263EB33200910CE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CF3E94F263EB33200910CE5 /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		6CF3E952263EB33200910CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6CF3E954263EB33900910CE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CF3E957263EB33900910CE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,7 +88,6 @@
 		6CF3E970263EBACA00910CE5 /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
 		6CF3E974263EC0B500910CE5 /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 		6CF3E977263EC42B00910CE5 /* Alignment and Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alignment and Size.swift"; sourceTree = "<group>"; };
-		6CFF96C3267D31DB00D60377 /* ClassPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPaths.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				6C4DAA77267B75B3002FA966 /* Features */,
-				6CFF96C3267D31DB00D60377 /* ClassPaths.swift */,
 				6CCB96A526517C8E00CC4F93 /* StartEquipment.swift */,
+				6CD9A34B267F82B800B0DED3 /* ClassPaths.swift */,
 			);
 			path = ClassStuff;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 				6C185C512677A643001067A3 /* TypeOfDamage.swift */,
 				6CF3E977263EC42B00910CE5 /* Alignment and Size.swift */,
 				6CCB96B22651847400CC4F93 /* Ability, Skills, SavingThrow.swift */,
+				6CE89A6D26810676009B8F9C /* HP and XP.swift */,
 			);
 			path = OtherStuff;
 			sourceTree = "<group>";
@@ -187,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				6CBECFEB266BFD660089E20B /* Model.xcdatamodeld */,
-				6C4DAA7D267BABDA002FA966 /* DND_Playground.playground */,
 				6C4DAA74267B7444002FA966 /* Translate.swift */,
 				6CF3E960263EB36200910CE5 /* Add's File */,
 				6CF3E967263EB3A800910CE5 /* Model */,
@@ -211,7 +218,9 @@
 		6CF3E963263EB38600910CE5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6CF3E94F263EB33200910CE5 /* ViewController.swift */,
+				6CF3E94F263EB33200910CE5 /* StartController.swift */,
+				6CE872902687AA11000E1394 /* CreateHeroController.swift */,
+				6C8092592688767800FB8D4A /* RaceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 			children = (
 				6CF3E951263EB33200910CE5 /* Main.storyboard */,
 				6CF3E956263EB33900910CE5 /* LaunchScreen.storyboard */,
+				6C80925D268A387200FB8D4A /* ShortInfoRace.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,10 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CFF96C4267D31DB00D60377 /* ClassPaths.swift in Sources */,
+				6CE872912687AA11000E1394 /* CreateHeroController.swift in Sources */,
 				6CBECFD9265BD10D0089E20B /* ItemRootClass.swift in Sources */,
+				6CE89A6E26810676009B8F9C /* HP and XP.swift in Sources */,
 				6CCB969C26516BFE00CC4F93 /* Subraces.swift in Sources */,
-				6CF3E950263EB33200910CE5 /* ViewController.swift in Sources */,
+				6CF3E950263EB33200910CE5 /* StartController.swift in Sources */,
 				6CF3E978263EC42B00910CE5 /* Alignment and Size.swift in Sources */,
 				6C185C542677CD1D001067A3 /* Items.swift in Sources */,
 				6C185C582679330C001067A3 /* VehicleAndMount.swift in Sources */,
@@ -340,10 +351,13 @@
 				6CF3E94E263EB33200910CE5 /* SceneDelegate.swift in Sources */,
 				6CCB96AE2651834F00CC4F93 /* Dices&Money.swift in Sources */,
 				6CF3E969263EB40F00910CE5 /* Character.swift in Sources */,
+				6C80925E268A387200FB8D4A /* ShortInfoRace.swift in Sources */,
 				6C185C522677A643001067A3 /* TypeOfDamage.swift in Sources */,
+				6C80925A2688767800FB8D4A /* RaceViewController.swift in Sources */,
 				6CF3E96D263EB86000910CE5 /* RaceRootClass.swift in Sources */,
 				6C9E597426779BE300060D61 /* Weapon.swift in Sources */,
 				6C4DAA73267A0C29002FA966 /* Trinkets.swift in Sources */,
+				6CD9A34C267F82B800B0DED3 /* ClassPaths.swift in Sources */,
 				6C4DAA79267B75B3002FA966 /* FeaturesRoot.swift in Sources */,
 				6CBECFE5266238090089E20B /* Armor.swift in Sources */,
 				6C4DAA75267B7444002FA966 /* Translate.swift in Sources */,

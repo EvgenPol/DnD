@@ -9,8 +9,8 @@ import Foundation
 
 class ClassBasis {
     
+    let name:EnumClass
     var level = 1
-    let hitDie:Dices
     var features:[String:Features]
     let primaryAbility:[Ability]
     let skills:[Skills]
@@ -18,30 +18,24 @@ class ClassBasis {
     let toolsProficiencies:[Tools]
     let armorProficiencies:[Armor]
     let weaponProficiencies:[Weapon]
-    let path:ClassPaths!
+    var path:ClassPaths!
     //MARK: Преимущства, помехи и резисты есть у классов чар и классЧар, надо пересмотреть
-    var advantage = [String]()
-    var disadvantage = [String]()
-    var resistance = [TypeOfDamage]()
     
-    func damage (condition: [() -> Bool]) -> Int {
-        0
-    }
-    func defense(condition: [() -> Bool]) -> Int {
-        0
-    }
-    func useFeatures(condition: () -> Bool, feature: Features) {
-      
-    }
     
-    func hitForLevel_1 (constitutionModifier:Int) -> Int {
-        Dices.throwing(cast: 1, dice: hitDie) + constitutionModifier
+    
+    static func findClass(charClass:EnumClass) -> ClassBasis {
+        switch charClass {
+        case .barbarian: return BarbarianClass(skills: [])
+        }
     }
+        
+    func nextLevel() {}
+        
+    func advantage() {}
     
-    func nextLevel () {}
-    
-    init(hitDie:Dices, features:[Features], primaryAbility:[Ability], skills:[Skills], savingThrowProficiencies:[Ability], toolsProficiencies:[Tools], armorProficiencies:[Armor], weaponProficiencies:[Weapon]) {
-        self.hitDie = hitDie
+  
+    init(nameClass: EnumClass, features:[String:Features], primaryAbility:[Ability], skills:[Skills], savingThrowProficiencies:[Ability], toolsProficiencies:[Tools], armorProficiencies:[Armor], weaponProficiencies:[Weapon]) {
+        name = nameClass
         self.features = features
         self.primaryAbility = primaryAbility
         self.skills = skills
@@ -51,3 +45,9 @@ class ClassBasis {
         self.weaponProficiencies = weaponProficiencies
     }
 }
+
+enum EnumClass {
+    case barbarian
+}
+
+

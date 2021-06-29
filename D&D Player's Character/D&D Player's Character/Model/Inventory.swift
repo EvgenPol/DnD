@@ -15,7 +15,6 @@ struct Inventory {
     var unEquipment = UnEquipment()
     
     func startEquipment (class:ClassBasis) {
-        a
     }
 }
 

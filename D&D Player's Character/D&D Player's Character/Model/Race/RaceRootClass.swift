@@ -10,17 +10,17 @@ import Foundation
 class Race {
     
     let name:String
-    let age:Range<UInt>
+    let age:ClosedRange<Int>
     let size:Size
     let speed:Int
     let traits:[Traits]
     let languages:[Languages]
     let ownerTools:[Tools]
     let subraces:Subraces
-    let weight:Range<UInt>
-    let height:Range<UInt>
+    let weight:ClosedRange<Int>
+    let height:ClosedRange<Int>
 
-    init (name:String, age:Range<UInt>, size: Size, speed:Int, traits:[Traits], languages:[Languages], ownerTools:[Tools], subraces:Subraces, weight:Range<UInt>, height:Range<UInt>) {
+    init (name:String, age:ClosedRange<Int>, size: Size, speed:Int, traits:[Traits], languages:[Languages], ownerTools:[Tools], subraces:Subraces, weight:ClosedRange<Int>, height:ClosedRange<Int>) {
         self.name = name
         self.age = age
         self.size = size

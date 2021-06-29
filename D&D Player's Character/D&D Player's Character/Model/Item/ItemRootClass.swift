@@ -13,13 +13,11 @@ class Item {
     let cost: Double
     let weight: Double
     let description: String
-    var typeOfWeapon:Weapon.TypeOfWeapon
     init(name: String, cost: Double, weight: Double, description: String ) {
         self.name = name
         self.cost = cost
         self.weight = weight
         self.description = description
-        self.typeOfWeapon = .improvised
     }
 }
 

@@ -14,15 +14,12 @@ class Ammunition: Item {
         case blowgunNeedles
         case crossbowBolt
         case slingBullets
-        //MARK: Задание
-        //добавить в rawValue (name: String...), как в экстеншене OtherItems
-        //
-        var rawValue: (cost:Double, weight:Double) {
+        var rawValue: (name: String, cost:Double, weight:Double) {
                switch self {
-               case .arrow: return (5, 0.05)
-               case .blowgunNeedles: return (2, 0.02)
-               case .crossbowBolt: return (5, 0.075)
-               case .slingBullets: return (0.2, 0.075)
+               case .arrow: return ("Стрела", 5, 0.05)
+               case .blowgunNeedles: return ("Иглы для духового оружия", 2, 0.02)
+               case .crossbowBolt: return ("Арбалетные болты",  5, 0.075)
+               case .slingBullets: return ("Шарики для пращи",  0.2, 0.075)
                }
         }
     }
@@ -34,18 +31,18 @@ class Ammunition: Item {
         case .crossbowBolt: name = "Болт"
         case .slingBullets: name = "Снаряд для пращи"
         }
-        super.init(name: name, cost: ammunition.rawValue.cost, weight: ammunition.rawValue.weight, description: "")
         self.ammunition = ammunition
+        super.init(name: name, cost: ammunition.rawValue.cost, weight: ammunition.rawValue.weight, description: "")
     }
 }
 class OtherItems: Item {
     let item: Items
     enum Items {
-        case abacus, acidVial, alchemistsFireFlask, antitoxinVial, backpack, ballBearings, barrel, basket, bedroll, bell ,blanket, blockAndTackle, book, bootle, glass, bucket, caltrops, candle, caseCrossbowBolt, caseMapOrScroll, chain, chalk, chest, climbersKit, clothesCommon, clothesCostume, clothesFine, clothesTraveler, componentPouch, crowbar, fishingTackle, flaskOfTankard, grapplingHook,hammer, hammerSledge, healersKit, holyWaterFlask, hourglass, huntingTrap, inkBotle, inkPen, jug, ladder, lamp,lanternBullseye,lanternHooded,lock,magnifyingGlass, manacles, messKit, mirrorSteel, oilFlask, paper, parchment, perfumeVial, pickMiners, piton, poisonBasicVial, pole, potIron, potionOfHealing, pouch, quiver, ramPortable,rations, robes,ropeHempen, ropeSilk, sack, scaleMerchants, sealingWax, shovel, signalWhistle, signetRing,soap,spellbook,         spikesIron, spyglass, tent, tinderbox, torch, vial, waterskin, whetstone
+        case abacus, acidVial, alchemistsFireFlask, antitoxinVial, backpack, ballBearings, barrel, basket, bedroll, bell ,blanket, blockAndTackle, book, bootle, glass, bucket, caltrops, candle, caseCrossbowBolt, caseMapOrScroll, chain, chalk, chest, climbersKit, clothesCommon, clothesCostume, clothesFine, clothesTraveler, componentPouch, crowbar, fishingTackle, flaskOfTankard, grapplingHook,hammer, hammerSledge, healersKit, holyWaterFlask, hourglass, huntingTrap, inkBotle, inkPen, jug, ladder, lamp, lanternBullseye, lanternHooded, lock, magnifyingGlass, manacles, messKit, mirrorSteel, oilFlask, paper, parchment, perfumeVial, pickMiners, piton, poisonBasicVial, pole, potIron, potionOfHealing, pouch, quiver, ramPortable,rations, robes,ropeHempen, ropeSilk, sack, scaleMerchants, sealingWax, shovel, signalWhistle, signetRing,soap,spellbook, spikesIron, spyglass, tent, tinderbox, torch, vial, waterskin, waterskinfuul, whetstone
     }
     private init(item:Items, name:String, cost:Double,weight:Double, description:String){
-        super.init(name: name, cost: cost, weight: weight, description: description)
         self.item = item
+        super.init(name: name, cost: cost, weight: weight, description: description)
     }
 }
 //MARK: Стартовые паки
@@ -63,7 +60,8 @@ class Pack: Item {
     //MARK:Задание
     //реализовать init как в Ammunition, посчитав цену и вес в книге игрока d&d на русском, "наборы экипировки" стр 151
     init(pack:Packs) {
-        <#statements#>
+        self.pack = pack
+        super.init(name: "", cost: 1, weight: 2, description: "")
     }
 }
 
@@ -107,47 +105,55 @@ extension OtherItems {
         case .hammer: return ("Молоток", 1_000, 3)
         case .hammerSledge: return ("Кувалда", 2_000, 10)
         case .healersKit: return ("Набор лекаря", 5_000, 3)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
-        case . : return ("", ,)
+        case .holyWaterFlask: return ("Святая вода (колба)", 25_000, 1)
+        case .hourglass: return ("Песочные часы", 25_000, 1)
+        case .huntingTrap: return ("Капкан", 5_000 , 25)
+        case .inkBotle: return ("Чернила", 10_000 ,0.1)
+        case .inkPen: return ("Чернильное перо", 2, 0.1)
+        case .jug: return ("Кувшин", 2, 4)
+        case .ladder: return ("Лестница", 1, 25)
+        case .lamp: return ("Лампа",5_00 , 1)
+        case .lanternBullseye: return ("Фонарь,бычий глаз", 10_000, 2)
+        case .lanternHooded: return ("Фонарь с козырьком", 5_000, 2)
+        case .lock: return ("Замок", 10_000, 1)
+        case .magnifyingGlass: return ("Лупа", 100_000, 0.1)
+        case .manacles: return ("Наручники", 2_000, 6)
+        case .messKit: return ("Столовые приборы", 2_00, 1)
+        case .mirrorSteel: return ("Стальное зеркало", 5_000, 0.5)
+        case .oilFlask: return ("Флакон масла", 1_00, 1)
+        case .paper: return ("Бумага, один лист", 2_00, 0.1)
+        case .parchment: return ("Пергамент, один лист", 1_00, 0.1)
+        case .perfumeVial: return ("Флакон духов", 5_000, 0.1)
+        case .pickMiners: return ("Шахтёрская кирка", 2_000, 10)
+        case .piton: return ("Крюк", 5, 0.2)
+        case .poisonBasicVial: return ("Флакон обычного яда", 100_000, 0.1)
+        case .pouch: return ("Сумка", 5_00, 1)
+        case .quiver: return ("Колчан", 1_000, 1)
+        case .ramPortable: return ("Переносной таран", 4_000, 35)
+        case .rations: return ("Провизия", 5_00, 2)
+        case .robes: return ("Одеяние", 1_000, 4)
+        case .ropeHempen: return ("Пеньковая верёвка 50 футов", 1_000, 10)
+        case .ropeSilk: return ("Шёлковая верёвка 50 футов", 10_000, 5)
+        case .sack: return ("Мешочек", 5, 2)
+        case .scaleMerchants: return ("Торговые весы", 5_000, 3)
+        case .sealingWax: return ("Сургуч", 5_00, 0.1)
+        case .shovel: return ("Монтировка", 2_000, 5)
+        case .signalWhistle: return ("Сигнальный свисток", 5, 0.1)
+        case .signetRing: return ("Кольцо-перчатка", 5_000, 0.1)
+        case .soap: return ("Мыло", 2, 0.1)
+        case .spellbook: return ("Книга заклинаний", 50_000, 3)
+        case .spikesIron: return ("Железные шипы", 1_000, 5)
+        case .spyglass: return ("Подзорная труба", 1000_000, 1)
+        case .tent: return ("Палатка на двоих", 2_000, 20)
+        case .tinderbox: return ("Трутница", 5_00, 1)
+        case .torch: return ("Факел", 1, 1)
+        case .vial: return ("Флакон", 1_000, 0.1)
+        case .waterskin: return ("Пустой бурдюк", 2_00, 0.1)
+        case .waterskinfuul: return ("Бурдюк с водой", 4_00, 5)
+        case .whetstone: return ("Точильный камень", 1, 1)
+        case .pole: return ("Шест 10 футов", 5_00, 7)
+        case .potIron: return ("Железный котелок", 2_000, 10)
+        case .potionOfHealing: return ("Лечебное зелье", 50_000, 0.5)
         }
     }
 }

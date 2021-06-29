@@ -6,86 +6,44 @@
 //
 
 import Foundation
-
-//Безоружная атака это simple melee
-class Character {
-    var level = 1
-    let race:RaceBasis
-    var classOfChar:[ClassBasis]
-    var hitDices:[Int:Dices]
-    var expirience:UInt = 0
-    var hitPoints = 0
-    var maxHP = 0
-    var advantage:Bool
-    var disadvanrage:Bool
-    var resistance:[String]
-    var ability = Ability()
+struct Character {
+    var initiative: UInt?
+    let race:Race
+    var classOfChar:[EnumClass:ClassBasis]
+    var hitPoints: HP
+    var level = XP()
+    var ability = AbilityChar()
     var alignment:Alignment
-    var additionHP = 0
-    let resistance:[String]
-    var armorClass:Int { 0 }
+    var armorClass = 10
     var inventory = Inventory()
-        
+   
     
-    var personality:Personality!
-    var background:Background!
-    var proficiencyBonus:Int {
-        switch level {
-        case 1...4: return 2
-        case 5...8: return 3
-        case 9...12: return 4
-        case 13...16: return 5
-        default: return 6
+    mutating func first(){
+        let char = classOfChar.first!.value.name
+        let hitPointsMax = UInt(HP.findHitDice(charClass: char).rawValue + UInt32(ability.modifier(parametr: .constitution)))
+        let hitPointsDice = (char, 1, HP.findHitDice(charClass: char))
+        self.hitPoints = HP(current: hitPointsMax, max: hitPointsMax, dice: [hitPointsDice])
+    }
+    
+    
+    mutating func setInitiative (battleIsOver: Bool) {
+        battleIsOver ? (initiative = nil) : (initiative = UInt(Dices.throwing(cast: 1, dice: .d20)))
+    }
+
+    mutating func levelUp(charClass: EnumClass, path: ClassPaths...) {
+        guard level.current > level.requiredExp else { return }
+        if !classOfChar.keys.contains(charClass) {
+            classOfChar[charClass] = ClassBasis.findClass(charClass: charClass)
         }
-    }
-    
-    func modifier(parametr:Ability) -> Int {
-        
-    }
-    
-    
-    func useFeaturesOfClass(features:Features) {
-        classOfChar.useFeatures(features:features)
-    }
-    
-    func useTraitOfRace() {
-    }
-    
-    func updateStatsCharacter() {
-        self.advantage = classOfChar.advantage
-        self.resistance = classOfChar.resistance
-    }
-    
-    func findDefence () -> Int {
-        var defence = 0
-        for `class` in classOfChar {
-            //Обрабатывает случай когда умение бездоспешная защита Варвара действует
-            if `class` is BarbarianClass && `class`.features.contains(where: {$0 is UnarmoredDefence}) && inventory.equipment.armor == nil {
-                // проверка на наличие щита
-                ((inventory.equipment.leftHand is Shield) || (inventory.equipment.rightHand is Shield)) ? (defence = 2) : (defence = 0)
-                defence += 10 + modifier(parametr: .dexterity) + modifier(parametr: .constitution)
-            }
+        level.current = level.current - level.requiredExp
+        path.isEmpty ? () : (classOfChar[charClass]!.path = path[0])
+        classOfChar[charClass]!.nextLevel()
+        switch classOfChar[charClass]!.level {
+            case 4,8,12,16,19: ability.freePoints += 2
+            default: break
         }
-        return defence
-    }
-    init() {
-        
-    }
-    
-    func physicalAttackImprovised (anotherChar: Character, characteristic: (Int, TypeOfDamage)) {
-        
-    }
-    func physicalAttackWeapon (anotherChar: Character, item: Item) {
-        let weapon = item as! Weapon
-        var damage = weapon.damage
-        
-    }
-        
-        private func physicalAttack () -> Int {
-            
-        }
-    
-    func massAttack () {
-        
+        hitPoints.max += UInt(Dices.throwing(cast: 1, dice: HP.findHitDice(charClass: classOfChar[charClass]!.name)) + ability.modifier(parametr: .constitution))
+        hitPoints.addDice(charClass: charClass)
+        level.level += 1
     }
 }

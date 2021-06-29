@@ -13,7 +13,6 @@ class Armor: Item {
     let stealthDisadvantage: Bool
     let strength: Int?
     let type: String
-    let stealthDisadvntage: Bool
     let modifier:String?
     let don: Int
     let doff: Int
@@ -23,13 +22,15 @@ class Armor: Item {
     }
     
     init(name:String, cost:Double, weight:Double, description:String, armorClass:Int, stealthDisadvantage:Bool, strength:Int?, type:String, modifier:String?, don:Int, doff:Int ) {
-        super.init(name: name, cost: cost, weight: weight, description: description)
         self.armorClass = armorClass
         self.stealthDisadvantage = stealthDisadvantage
         self.type = type
         self.modifier = modifier
         self.don = don
         self.doff = doff
+        self.strength = strength
+        super.init(name: name, cost: cost, weight: weight, description: description)
+       
     }
 }
 //MARK: виды брони + щит

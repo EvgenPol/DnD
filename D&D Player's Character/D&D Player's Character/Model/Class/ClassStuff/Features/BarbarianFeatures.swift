@@ -12,7 +12,19 @@ class Rage: Features {
     var total = 2
     var damage = 2
     var enabled = false
-    var time: Int { 10 }
+    var heavyArmorEquip = false
+    var time = 10 
+    var constitutionSavingThrow = 10
+    
+    var useRage:Void {
+        if self.enabled == false {
+            guard self.count > 0 else { return }
+            self.count -= 1
+            self.enabled = true
+        } else {
+            self.enabled = false
+        }
+    }
     
     init() {
         super.init(name: "Ярость")
@@ -35,6 +47,11 @@ class DangerSense: Features {
         super.init(name: "Чувство опасности")
     }
 }
+class PrimalPath: Features {
+    init() {
+        super.init(name: "Первородный путь")
+    }
+}
 class ExtraAttack: Features {
     init() {
         super.init(name: "Дополнительная атака")
@@ -52,6 +69,7 @@ class FeralInstinct: Features {
     }
 }
 class BrutalCritical: Features {
+    var countDices = 1
     init() {
         super.init(name: "Зверский критический удар")
     }
@@ -80,19 +98,62 @@ class PrimalChampion: Features {
     }
 }
 //PATH OF THE BERSERKER--------------------------------
-case frenzy = "Неистовство"
-case mindlessRage = "Бездумная ярость"
-case intimidatingPresence  = "Пугающий вид"
-case retaliation = "Возмездие"
+class Frenzy: Features {
+    init() {
+        super.init(name: "Неистовство")
+    }
+}
+class MindlessRage: Features {
+    init() {
+        super.init(name: "Бездумная ярость")
+    }
+}
+
+class IntimidatingPresence: Features {
+    init() {
+        super.init(name: "Пугающий вид" )
+    }
+}
+
+class Retaliation: Features  {
+        init() {
+            super.init(name: "Возмездие")
+    }
+}
+        
 //PATH OF THE TOTEM WARRIOR--------------------------------
-case spiritSeeker = "Искатель духов"
-case totemSpirit (beastOfBarbarian) = "Тотемный дух"
-case aspectOfTheBeast (beastOfBarbarian) = "Аспект зверя"
-case spiritWalker (beastOfBarbarian)  = "Говорящий с духами"
-case totemicAttunement  = "Тотемное единство"
+class SpiritSeeker: Features {
+    init() {
+        super.init(name: "Искатель духов")
+    }
+}
+class TotemSpirit: Features {
+    var beast: BeastOfBarbarian!
+    init() {
+        super.init(name: "Тотемный дух")
+        }
+}
+class AspectOfTheBeast: Features {
+    var beast: BeastOfBarbarian!
+    init() {
+        super.init(name:  "Аспект зверя" )
+    }
+}
+class SpiritWalker: Features {
+    init() {
+        super.init(name: "Говорящий с духами")
+    }
+}
+class TotemicAttunement: Features {
+    var beast: BeastOfBarbarian!
+    init() {
+        super.init(name: "Тотемное единство" )
+    }
+}
 //Enum beast for Barbarian Totem Warior--------------------------------
-enum beastOfBarbarian: String{
+enum BeastOfBarbarian: String {
     case bear  = "Медведь"
     case eagle  = "Орёл"
     case wolf  = "Волк"
 }
+

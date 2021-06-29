@@ -11,7 +11,7 @@ class Weapon: Item {
     let distance:Distance
     let properties: [Properties]
     var damage: (Int, TypeOfDamage?) { (0, .bludgeoning) }
-    
+    var typeOfWeapon: TypeOfWeapon
     enum Distance {
         case melee, ranged
     }
@@ -22,17 +22,21 @@ class Weapon: Item {
         case ammunition, finesse, heavy, light, loading, range, reach, special, thrown, twoHanded, versatile
     }
     init(name: String, cost: Double, weight: Double, description: String, distance:Distance, typeOfWeapon:TypeOfWeapon, properties:[Properties]) {
-        super.init(name: name, cost: cost, weight: weight, description: description)
         self.distance = distance
         self.typeOfWeapon = typeOfWeapon
         self.properties = properties
+        super.init(name: name, cost: cost, weight: weight, description: description)
+       
+    }
+    func isEqual (weapon: Weapon) -> Bool {
+        type(of: self) == type(of: weapon)
     }
 }
 //MARK: Протоколы для свойств оружия
 
 // ...W is "Weapon"
  protocol SpecialW {}
- protocol FinesseW {}
+ protocol FinesseW { }
  protocol HeavyW {}
  protocol LightW {}
  protocol ReachW {}

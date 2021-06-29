@@ -22,5 +22,4 @@ enum TypeOfDamage: String {
     case psychic = "Психический"
     case radiant = "Свет"
     case thunder = "Звук"
-    
 }
